@@ -28,6 +28,11 @@ let lastId = 0;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// Route: Welcome message for the root path
+app.get("/", (req, res) => {
+	res.send("Welcome to the Shopping List API. Use /api/listing for API endpoints.");
+});
+
 //Route: Get ALL listed items
 app.get("/api/listing", (req, res) => {
 	res.json({ data: listings });
